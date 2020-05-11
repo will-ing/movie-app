@@ -27,9 +27,10 @@ Auto fix on save
 
 
 You can disable specific lines in eslint by using `// eslint-disable-line <F8 error>`
+
 To disable for the file use: `/* eslint <F8 error>: 0 */`
 
-## what should be in eslintrc.json
+## what should be in .eslintrc.js
 
 ```js
 {
