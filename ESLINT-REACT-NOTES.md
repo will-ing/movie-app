@@ -28,7 +28,7 @@ To disable for the file use: `/* eslint <F8 error>: 0 */`
 
 ## what should be in eslintrc.json
 
-```json
+```js
 {
     "parserOptions": {
         "ecmaVersion": 6,
