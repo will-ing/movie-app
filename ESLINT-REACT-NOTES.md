@@ -5,6 +5,7 @@
 Steps
 
 1 `npm install eslint --save-dev`
+
 2 setup config file `npx eslint --init`
 
   - How would you like to configure? -> Use pop style guide -> airbnb
