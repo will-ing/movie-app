@@ -10,6 +10,7 @@ Steps
   - do you use react? -> yes
   - What format? -> json or js
   - do you want to upgrade? -> yes
+  
 3 `npm install eslint-plugin-react --save-dev`
 
 - Environments - which environments your script is designed to run in. Each environment brings with it a certain set of predefined global variables.
