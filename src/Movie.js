@@ -1,30 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
+const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 
+const Movie = ({ movie }) => (
+  <div>
+    <Link to={`/${movie.id}`}>
+      <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
+    </Link>
+  </div>
+)
 
-
-export default class Movie extends Component {
-  // you should have a proptype for every prop in your component
-  static propTypes = {
-    movie: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-    }),
-  }
-
-// you need either a isRequired or a default prop for each
-/*   static defaultProps = {
-    desc: 'Description not available'
-  } */
-
-
-  
-  render() {
-    return (
-      <div>
-        <h3>{this.props.movie.title}</h3>
-
-      </div>
-    )
-  }
+export default Movie;
+// you should have a proptype for every prop in your component
+Movie.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
