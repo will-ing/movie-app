@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint react/no-did-mount-set-state: 0 */
 import React, { Component } from 'react';
 import {
@@ -17,7 +18,7 @@ const App = () => (
     <div className='App'>
       <header className='App-header'>
         <Link to="/">
-          <img src={ logo } className="App-logo" alt="logo" />
+          <h1>Movie App in React</h1>
         </Link>
       </header>
       <Switch>

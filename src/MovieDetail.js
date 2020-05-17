@@ -26,12 +26,15 @@ class MovieDetail extends Component {
   render() {
     const { movie } = this.state;
     return (
-      <MovieWrapper>
-        <img src={ `${BACKDROP_PATH}${movie.backdrop_path}` } alt={ movie.title } />
-        <img src={ `${POSTER_PATH}${movie.poster_path}` } alt={ movie.title } />
-        <h1>{ movie.title }</h1>
-        <h3>{ movie.release_date }</h3>
-        <p>{ movie.overview }</p>
+      <MovieWrapper backdrop={ `${BACKDROP_PATH}${movie.backdrop_path}` }>
+        <MovieInfo>
+          <Poster src={ `${POSTER_PATH}${movie.poster_path}` } alt={ movie.title } />
+          <div>
+            <h1>{ movie.title }</h1>
+            <h3>{ movie.release_date }</h3>
+            <p>{ movie.overview }</p>
+          </div>
+        </MovieInfo>
       </MovieWrapper>
     )
   }
@@ -41,7 +44,7 @@ export default MovieDetail;
 
 const MovieWrapper = styled.div`
   position: relative;
-  padding-top: 50vh;
+  padding-top: 25rem;
   background: url(${props => props.backdrop}) no-repeat;
   background-size: cover;
 `
@@ -55,7 +58,7 @@ const MovieInfo = styled.div`
     margin-left: 20px;
   }
   img {
-    posiion: relative;
+    position: relative;
     top: -5rem;
   }
 `;
