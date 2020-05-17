@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Movie from './Movie'
+import styled from 'styled-components';
+import Movie from './Movie';
 
 class MoviesList extends Component {
   // need a default state or you will get an error
   state = {
     movies: [],
   }
-
 
   //async says we are hitting and api and will wait for it to come back
   async componentDidMount() {
@@ -24,11 +24,18 @@ class MoviesList extends Component {
 
   render() {
     return (
-      <div className="App">
-        {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)}
-      </div>
-    )
+      <MovieGrid>
+        { this.state.movies.map(movie => <Movie key={ movie.id } movie={ movie } />) }
+      </MovieGrid>
+    );
   }
 }
 
 export default MoviesList;
+
+const MovieGrid = styled.div`
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+  grid-row-gap: 1rem;
+`;
