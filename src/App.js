@@ -17,11 +17,14 @@ const App = () => (
   <Router>
     <div className='App'>
       <header className='App-header'>
+        {/* links to the home route */ }
         <Link to="/">
           <h1>Movie App in React</h1>
         </Link>
       </header>
+      {/* A switch is a if statment that chooses routes */ }
       <Switch>
+        {/* you can use the "exact" prop so you don't have to worry about order */ }
         <Route exact path="/" component={ MoviesList } />
         <Route path="/:id" component={ MovieDetail } />
       </Switch>

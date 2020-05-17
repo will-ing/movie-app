@@ -26,8 +26,10 @@ class MovieDetail extends Component {
   render() {
     const { movie } = this.state;
     return (
+      // passing backdrop as a prop in MovieWrapper so that the backdrop is displayed as a background img
       <MovieWrapper backdrop={ `${BACKDROP_PATH}${movie.backdrop_path}` }>
         <MovieInfo>
+          {/* poster is passed in from Movie.js to take the place of img tag */ }
           <Poster src={ `${POSTER_PATH}${movie.poster_path}` } alt={ movie.title } />
           <div>
             <h1>{ movie.title }</h1>
@@ -41,7 +43,7 @@ class MovieDetail extends Component {
 }
 
 export default MovieDetail;
-
+// styling for each tag
 const MovieWrapper = styled.div`
   position: relative;
   padding-top: 25rem;

@@ -24,13 +24,15 @@ class MoviesList extends Component {
 
   render() {
     return (
+      // created a MovieGrid style that acts as a div
       <MovieGrid>
+        {/* mapping out each movie that comes from the api and using the movie component to render them in a grid */ }
         { this.state.movies.map(movie => <Movie key={ movie.id } movie={ movie } />) }
       </MovieGrid>
     );
   }
 }
-
+// exporting MoviesList as a default. you can only do this once per component
 export default MoviesList;
 
 const MovieGrid = styled.div`
