@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Overdrive from 'react-overdrive'
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 
@@ -10,7 +11,9 @@ const Movie = ({ movie }) => (
   // passing through a movie parameter that will render the img of each movie in MoviesList.js
   <div>
     <Link to={ `/${movie.id}` }>
-      <img src={ `${POSTER_PATH}${movie.poster_path}` } alt={ movie.title } />
+      <Overdrive id={ movie.id }>
+        <img src={ `${POSTER_PATH}${movie.poster_path}` } alt={ movie.title } />
+      </Overdrive>
     </Link>
   </div>
 )
